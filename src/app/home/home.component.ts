@@ -10,11 +10,12 @@ import { Car } from '../car-model';
 })
 export class HomeComponent  implements OnInit {
   years: number[] = [2018, 2017, 2016, 2015,2014];
-  makers:string[]=["toyota","ford","tata","maruti","volkswagon","mercedez-benz"]
   variant:string[]=["base-varient","semi-varient","full-option"]
-  body:string[]=["sedan","hatch-back","suv","muv"];
   price:string[]=["5-7.5","7.5-10","10-15","15-20"];
   filteredCar: string[]=[];
+  body: string[] = ["sedan", "hatch-back", "suv", "muv"];
+  makers: string[] = ["toyota", "ford", "tata", "maruti", "volkswagen", "mercedes-benz"];
+  variants: string[] = ["base-varient", "semi-varient", "full-option"];
   
 
   cars: Car[] = [
@@ -84,7 +85,7 @@ export class HomeComponent  implements OnInit {
   }
   selectedBodyStyle: string = 'default';
   selectedMake:string= 'default';
-  selectedVarient:string='default'
+  selectedVariant:string='default'
   receivedData: any[] = [
    
   ];
@@ -113,7 +114,7 @@ export class HomeComponent  implements OnInit {
     .filter(car =>
       (this.selectedBodyStyle === 'default' || (car.body && car.body.toLowerCase() === this.selectedBodyStyle.toLowerCase())) &&
       (this.selectedMake === 'default' || (car.makers && car.makers.toLowerCase() === this.selectedMake.toLowerCase())) &&
-      (this.selectedVarient === 'default' || (car.variants && car.variants.toLowerCase() === this.selectedVarient.toLowerCase()))
+      (this.selectedVariant === 'default' || (car.varient && car.varient.toLowerCase() === this.selectedVariant.toLowerCase()))
     );
 console.log(filteredCars)
   this.service.setFilteredCars(filteredCars);
