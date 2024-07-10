@@ -68,7 +68,7 @@
                             <div class="single-model-search">
                                 <h2>body style</h2>
                                 <div class="model-select-icon">
-                                    <select class="form-control">
+                                    <select class="form-control" [(ngModel)]="selectedBodyStyle">
 
                                         <option value="default">Body</option><!-- /.option-->
                                         <option *ngFor="let bod of body" [value]="bod">{{ bod }}</option>
@@ -81,7 +81,7 @@
                             <div class="single-model-search">
                                 <h2>select make</h2>
                                 <div class="model-select-icon">
-                                    <select class="form-control">
+                                    <select class="form-control" [(ngModel)]="selectedMake">
 
                                         <option value="default">Makers</option><!-- /.option-->
                                         <option *ngFor="let make of makers" [value]="make">{{ make }}</option>
@@ -109,10 +109,10 @@
                             <div class="single-model-search">
                                 <h2>select Varient</h2>
                                 <div class="model-select-icon">
-                                    <select class="form-control">
+                                    <select class="form-control" [(ngModel)]="selectedVarient">
 
                                         <option value="default">Varient</option><!-- /.option-->
-                                        <option *ngFor="let varience of varient" [value]="varience">{{ varience }}</option>
+                                        <option *ngFor="let varience of variant" [value]="varience">{{ varience }}</option>
 
                                     </select><!-- /.select-->
                                 </div><!-- /.model-select-icon -->
@@ -131,7 +131,7 @@
                         </div>
                         <div class="col-md-2 col-sm-12">
                             <div class="single-model-search text-center">
-                                <button class="welcome-btn model-search-btn" (click)="navigateToCars()">
+                                <button class="welcome-btn model-search-btn" (click)="search()">
                                     search
                                 </button>
                             </div>

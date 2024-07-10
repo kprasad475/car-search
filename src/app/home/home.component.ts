@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarService } from '../car.service';
 import { Car } from '../car-model';
@@ -8,13 +8,15 @@ import { Car } from '../car-model';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent  implements OnInit {
   years: number[] = [2018, 2017, 2016, 2015,2014];
   makers:string[]=["toyota","ford","tata","maruti","volkswagon","mercedez-benz"]
-  varient:string[]=["base-varient","semi-varient","full-option"]
+  variant:string[]=["base-varient","semi-varient","full-option"]
   body:string[]=["sedan","hatch-back","suv","muv"];
   price:string[]=["5-7.5","7.5-10","10-15","15-20"];
   filteredCar: string[]=[];
+  
+
   cars: Car[] = [
     {
       year: 2018, maker: "toyota", variant: "base-variant", body: "sedan", price: "10-15", name: "", mileage: "", horsepower: "", transmission: "", description: "", image: "",
@@ -80,13 +82,44 @@ export class HomeComponent {
   constructor(private router:Router,private service:CarService){
 
   }
-       navigateToCars(){
-        this.router.navigate(['/cars'])
-       }
+  selectedBodyStyle: string = 'default';
+  selectedMake:string= 'default';
+  selectedVarient:string='default'
+  receivedData: any[] = [
+   
+  ];
+  ngOnInit() {
+    this.receivedData = this.service.getCars();
+    console.log('Initial data:', this.receivedData);
+  }
 
-       search(term: string) {
-        const filteredCars = this.cars.filter(car => car.maker.toLowerCase().includes(term.toLowerCase()));
-        this.service.setFilteredCars(filteredCars);
-        this.navigateToCars();
-      }
-    }
+  navigateToCars() {
+    this.router.navigate(['/cars']);
+  }
+
+  search() {
+    // console.log('Search initiated');
+    // if (this.selectedBodyStyle !== 'default') {
+    //   console.log('Received data before filter:', this.receivedData);
+    //   const filteredCars = this.receivedData.filter(car =>
+    //     car.makers.toLowerCase() === this.selectedBodyStyle.toLowerCase()
+    //   );
+    //   this.service.setFilteredCars(filteredCars);
+    //   console.log('Filtered cars:', filteredCars);
+    // } else {
+    //   this.service.setFilteredCars(this.receivedData);
+    // }
+    const filteredCars = this.service.getCars()
+    .filter(car =>
+      (this.selectedBodyStyle === 'default' || (car.body && car.body.toLowerCase() === this.selectedBodyStyle.toLowerCase())) &&
+      (this.selectedMake === 'default' || (car.makers && car.makers.toLowerCase() === this.selectedMake.toLowerCase())) &&
+      (this.selectedVarient === 'default' || (car.variants && car.variants.toLowerCase() === this.selectedVarient.toLowerCase()))
+    );
+console.log(filteredCars)
+  this.service.setFilteredCars(filteredCars);
+  this.navigateToCars();
+
+}
+
+  }
+    
