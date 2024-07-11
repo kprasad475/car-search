@@ -47,9 +47,6 @@ export class CarService {
       makers:'ford',
       varient:'semi-varient',
       body:'suv'
-
-
-
     },
     {
       model: 2017,
@@ -63,8 +60,6 @@ export class CarService {
       makers:'tata',
       varient:'base-varient',
       body:'hatch-back'
-
-
 
     },
     {
