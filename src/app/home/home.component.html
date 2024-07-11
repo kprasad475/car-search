@@ -90,16 +90,12 @@
                                 </div><!-- /.model-select-icon -->
                             </div>
                             <div class="single-model-search">
-                                <h2>car condition</h2>
+                                <h2>select price</h2>
                                 <div class="model-select-icon">
-                                    <select class="form-control">
+                                    <select class="form-control" [(ngModel)]="selectedPrice">
 
-                                          <option value="default">condition</option><!-- /.option-->
-
-                                          <option value="something">something</option><!-- /.option-->
-
-                                          <option value="something">something</option><!-- /.option-->
-                                          <option value="something">something</option><!-- /.option-->
+                                        <option value="default">Price</option><!-- /.option-->
+                                        <option *ngFor="let pri of price" [value]="pri">{{ pri }}</option>
 
                                     </select><!-- /.select-->
                                 </div><!-- /.model-select-icon -->
@@ -117,17 +113,7 @@
                                     </select><!-- /.select-->
                                 </div><!-- /.model-select-icon -->
                             </div>
-                            <div class="single-model-search">
-                                <h2>select price</h2>
-                                <div class="model-select-icon">
-                                    <select class="form-control" [(ngModel)]="selectedPrice">
-
-                                        <option value="default">Price</option><!-- /.option-->
-                                        <option *ngFor="let pri of price" [value]="pri">{{ pri }}</option>
-
-                                    </select><!-- /.select-->
-                                </div><!-- /.model-select-icon -->
-                            </div>
+                           
                         </div>
                         <div class="col-md-2 col-sm-12">
                             <div class="single-model-search text-center">
@@ -211,11 +197,10 @@
                                 <div class="new-cars-txt">
                                     <h2><a href="#"> Hyundai Exter <span> 2023</span></a></h2>
                                     <p>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                                        The Hyundai Exter is a compact and versatile crossover that blends urban agility with sporty design. Known for its stylish appearance and efficient performance.
                                     </p>
                                     <p class="new-cars-para2">
-                                        Sed ut pers unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. 
-                                    </p>
+                                        the Exter offers a spacious interior with advanced features and modern technology.                                    </p>
                                     <button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
                                         view details
                                     </button>
@@ -234,13 +219,11 @@
                             </div>
                             <div class="col-md-5 col-sm-12">
                                 <div class="new-cars-txt">
-                                    <h2><a href="#">BMW series-3 wagon</a></h2>
+                                    <h2><a href="#">Renault KWID</a></h2>
                                     <p>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                    </p>
+                                        The Renault Kwid is a popular entry-level hatchback known for its bold SUV-inspired design and impressive ground clearance. It offers a spacious interior and advanced features, making it a standout in the budget car segment.                                    </p>
                                     <p class="new-cars-para2">
-                                        Sed ut pers unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. 
-                                    </p>
+                                        The Kwid is equipped with a user-friendly touchscreen infotainment system, digital instrument cluster, and efficient engine options.                                    </p>
                                     <button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
                                         view details
                                     </button>
@@ -299,18 +282,17 @@
                             <div class="featured-model-info">
                                 <p>
                                     model: 2017
-                                    <span class="featured-mi-span"> 3100 mi</span> 
-                                    <span class="featured-hp-span"> 240HP</span>
+                                    <span class="featured-mi-span"> 17 kmpl</span> 
+                                    <span class="featured-hp-span"> 1493 cc</span>
                                      automatic
                                 </p>
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#">BMW 6-series gran coupe</a></h2>
-                            <h3>$89,395</h3>
+                            <h2><a href="#">Kia Seltos</a></h2>
+                            <h3>₹ 10.9 Lakh</h3>
                             <p>
-                                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-                            </p>
+                                It is available with Automatic & Manual transmission.Depending upon the variant and fuel type the Seltos has a mileage of 17 to 20.7 kmpl .                            </p>
                         </div>
                     </div>
                 </div>
@@ -323,18 +305,17 @@
                             <div class="featured-model-info">
                                 <p>
                                     model: 2017
-                                    <span class="featured-mi-span"> 3100 mi</span> 
-                                    <span class="featured-hp-span"> 240HP</span>
-                                     automatic
+                                    <span class="featured-mi-span"> 18-21 kmpl</span> 
+                                    <span class="featured-hp-span"> 1197 cc - 1498 cc</span>
+                                     automatic/manual
                                 </p>
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#">chevrolet camaro <span>wmv20</span></a></h2>
-                            <h3>$66,575</h3>
+                            <h2><a href="#">Mahindra XUV 3XO<span></span></a></h2>
+                            <h3>₹ 7.5 Lakh</h3>
                             <p>
-                                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-                            </p>
+                                Mahindra XUV 3XO price starts at ₹ 7.49 Lakh and top model price goes upto ₹ 15.49 Lakh. XUV 3XO is offered in 25 variants                            </p>
                         </div>
                     </div>
                 </div>
@@ -354,8 +335,8 @@
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#">lamborghini <span>v520</span></a></h2>
-                            <h3>$125,250</h3>
+                            <h2><a href="#">Tata Nexon <span>2024</span></a></h2>
+                            <h3>₹ 8 Lakh</h3>
                             <p>
                                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
                             </p>
@@ -378,8 +359,8 @@
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#">audi <span> a3</span> sedan</a></h2>
-                            <h3>$95,500</h3>
+                            <h2><a href="#">Tata Punch <span>2024 </span> </a></h2>
+                            <h3>₹ 6.5 Lakh</h3>
                             <p>
                                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
                             </p>
@@ -404,8 +385,8 @@
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#">infiniti <span>z5</span></a></h2>
-                            <h3>$36,850</h3>
+                            <h2><a href="#">MG ASTOR <span></span></a></h2>
+                            <h3>₹ 12 Lakh</h3>
                             <p>
                                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
                             </p>
@@ -428,8 +409,8 @@
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#">porsche <span>718</span> cayman</a></h2>
-                            <h3>$48,500</h3>
+                            <h2><a href="#">Hyundai Creta <span></span> 2024</a></h2>
+                            <h3>₹ 13.5 Lakh</h3>
                             <p>
                                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
                             </p>
@@ -452,8 +433,8 @@
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#"><span>bmw 8-</span>series coupe</a></h2>
-                            <h3>$56,000</h3>
+                            <h2><a href="#"><span>Citroen C3</span></a></h2>
+                            <h3>₹ 6.5 Lakh</h3>
                             <p>
                                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
                             </p>
@@ -476,8 +457,8 @@
                             </div>
                         </div>
                         <div class="featured-cars-txt">
-                            <h2><a href="#">BMW <span> x</span>series-6</a></h2>
-                            <h3>$75,800</h3>
+                            <h2><a href="#">Kia Sonet <span> x</span>2024</a></h2>
+                            <h3>₹ 9.5 Lakh</h3>
                             <p>
                                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
                             </p>

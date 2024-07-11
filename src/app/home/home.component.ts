@@ -114,6 +114,8 @@ console.log(filteredCars)
   this.navigateToCars();
 
 }
+
+
 isWithinPriceRange(carPrice: number, priceRange: string): boolean {
   const [min, max] = priceRange.split('-').map(Number);
   return carPrice >= min && carPrice <= max;
