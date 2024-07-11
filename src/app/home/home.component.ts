@@ -86,7 +86,8 @@ export class HomeComponent  implements OnInit {
   selectedBodyStyle: string = 'default';
   selectedMake:string= 'default';
   selectedVariant:string='default'
-  selectedPrice:string='default'
+  selectedPrice:string='default';
+  selectedYear:string='default'
   receivedData: any[] = [   
   ];
   ngOnInit() {
@@ -105,7 +106,8 @@ export class HomeComponent  implements OnInit {
       (this.selectedBodyStyle === 'default' || (car.body && car.body.toLowerCase() === this.selectedBodyStyle.toLowerCase())) &&
       (this.selectedMake === 'default' || (car.makers && car.makers.toLowerCase() === this.selectedMake.toLowerCase())) &&
       (this.selectedVariant === 'default' || (car.varient && car.varient.toLowerCase() === this.selectedVariant.toLowerCase())) &&
-      (this.selectedPrice === 'default' || this.isWithinPriceRange(car.price, this.selectedPrice))
+      (this.selectedPrice === 'default' || this.isWithinPriceRange(car.price, this.selectedPrice)) && 
+      (this.selectedYear === 'default' || (car.model && car.model.toString() === this.selectedYear))
     );
 console.log(filteredCars)
   this.service.setFilteredCars(filteredCars);

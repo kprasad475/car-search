@@ -19,7 +19,7 @@ interface Car {
   styleUrl: './cars.component.css'
 })
 export class CarsComponent {
-  years: number[] = [2018, 2017, 2016, 2015,2014];
+  model: number[] = [2018, 2017, 2016, 2015,2014];
   makers:string[]=["toyota","ford","tata","maruti","volkswagon","mercedez-benz"]
   varient:string[]=["base-varient","semi-varient","full-option"]
   body:string[]=["sedan","hatch-back","suv","muv"];

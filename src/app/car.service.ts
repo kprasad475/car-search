@@ -124,7 +124,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'BMW X-series-6',
-      price: 6,
+      price: 8,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc8.png',
       makers:'tata',
