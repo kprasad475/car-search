@@ -6,7 +6,7 @@ export interface Car {
   horsepower: string;
   transmission: string;
   name: string;
-  price: string;
+  price: number;
   description: string;
   image: string;
   makers: string;
@@ -28,7 +28,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'BMW 6-series gran coupe',
-      price: '$89,395',
+      price: 7,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc1.png',
       makers:'toyota',
@@ -41,7 +41,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'Chevrolet Camaro WMV20',
-      price: '$66,575',
+      price: 8,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc2.png',
       makers:'ford',
@@ -54,7 +54,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'Lamborghini V520',
-      price: '$125,250',
+      price: 6.5,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc3.png',
       makers:'tata',
@@ -68,7 +68,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'Audi A3 Sedan',
-      price: '$95,500',
+      price: 6.5,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc4.png',
       makers:'maruti',
@@ -84,7 +84,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'Infiniti Z5',
-      price: '$36,850',
+      price: 9,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc4.png',
       makers:'tata',
@@ -98,7 +98,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'Porsche 718 Cayman',
-      price: '$48,500',
+      price: 7,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc5.png',
       makers:'ford',
@@ -111,7 +111,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'BMW 8-series Coupe',
-      price: '$56,000',
+      price: 8,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc7.png',
       makers:'volkswagon',
@@ -124,7 +124,7 @@ export class CarService {
       horsepower: '240HP',
       transmission: 'automatic',
       name: 'BMW X-series-6',
-      price: '$75,800',
+      price: 6,
       description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.',
       image: 'assets/images/featured-cars/fc8.png',
       makers:'tata',

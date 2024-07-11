@@ -86,8 +86,8 @@ export class HomeComponent  implements OnInit {
   selectedBodyStyle: string = 'default';
   selectedMake:string= 'default';
   selectedVariant:string='default'
-  receivedData: any[] = [
-   
+  selectedPrice:string='default'
+  receivedData: any[] = [   
   ];
   ngOnInit() {
     this.receivedData = this.service.getCars();
@@ -99,27 +99,22 @@ export class HomeComponent  implements OnInit {
   }
 
   search() {
-    // console.log('Search initiated');
-    // if (this.selectedBodyStyle !== 'default') {
-    //   console.log('Received data before filter:', this.receivedData);
-    //   const filteredCars = this.receivedData.filter(car =>
-    //     car.makers.toLowerCase() === this.selectedBodyStyle.toLowerCase()
-    //   );
-    //   this.service.setFilteredCars(filteredCars);
-    //   console.log('Filtered cars:', filteredCars);
-    // } else {
-    //   this.service.setFilteredCars(this.receivedData);
-    // }
+   
     const filteredCars = this.service.getCars()
     .filter(car =>
       (this.selectedBodyStyle === 'default' || (car.body && car.body.toLowerCase() === this.selectedBodyStyle.toLowerCase())) &&
       (this.selectedMake === 'default' || (car.makers && car.makers.toLowerCase() === this.selectedMake.toLowerCase())) &&
-      (this.selectedVariant === 'default' || (car.varient && car.varient.toLowerCase() === this.selectedVariant.toLowerCase()))
+      (this.selectedVariant === 'default' || (car.varient && car.varient.toLowerCase() === this.selectedVariant.toLowerCase())) &&
+      (this.selectedPrice === 'default' || this.isWithinPriceRange(car.price, this.selectedPrice))
     );
 console.log(filteredCars)
   this.service.setFilteredCars(filteredCars);
   this.navigateToCars();
 
+}
+isWithinPriceRange(carPrice: number, priceRange: string): boolean {
+  const [min, max] = priceRange.split('-').map(Number);
+  return carPrice >= min && carPrice <= max;
 }
 
   }

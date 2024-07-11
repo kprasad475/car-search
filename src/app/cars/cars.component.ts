@@ -6,7 +6,7 @@ interface Car {
   horsepower: string;
   transmission: string;
   name: string;
-  price: string;
+  price: number;
   description: string;
   image: string;
   makers:string;
@@ -24,7 +24,7 @@ export class CarsComponent {
   varient:string[]=["base-varient","semi-varient","full-option"]
   body:string[]=["sedan","hatch-back","suv","muv"];
   price:string[]=["5-7.5","7.5-10","10-15","15-20"];
-  cars: Car[] = [] ;
+  cars: Car[] = [];
   
 
   constructor(private service:CarService) {
