@@ -36,4 +36,11 @@ export class CarsComponent {
       console.log('Filtered cars in CarsComponent:', this.cars); // Check if cars are correctly received
     });
   }
+
+  say(){
+    this.service.filteredCars$.subscribe(cars=>{
+      this.cars = cars;
+      console.log('filtered cars in carscomponent',this.cars);// 
+    })
+  }
 }
